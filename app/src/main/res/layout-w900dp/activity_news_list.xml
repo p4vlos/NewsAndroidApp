@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_news_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pavlosnicolaou.newsapp.NewsListActivity"
+    android:orientation="horizontal"
+    android:showDividers="middle"
+    android:divider="?attr/dividerHorizontal"
+    android:baselineAligned="false">
+
+    <fragment
+        android:id="@+id/list_fragment"
+        android:name="pavlosnicolaou.newsapp.NewsListFragment"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_news_list"/>
+
+    <fragment
+        android:id="@+id/article_fragment"
+        android:name="pavlosnicolaou.newsapp.NewsArticleFragment"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout="@layout/fragment_news_article"/>
+
+</LinearLayout>
