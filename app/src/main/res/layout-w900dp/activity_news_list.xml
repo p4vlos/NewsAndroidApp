@@ -6,10 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="pavlosnicolaou.newsapp.NewsListActivity"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:showDividers="middle"
     android:divider="?attr/dividerHorizontal"
     android:baselineAligned="false">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/news_item_toolbar"
+        android:layout_height="58dp"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:titleTextColor="#ffffff">
+    </android.support.v7.widget.Toolbar>
 
     <fragment
         android:id="@+id/list_fragment"
@@ -24,6 +33,7 @@
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout="@layout/fragment_news_article"/>
+        android:layout="@layout/fragment_news_article"
+        tools:layout="@layout/fragment_news_article" />
 
 </LinearLayout>

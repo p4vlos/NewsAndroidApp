@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="pavlosnicolaou.newsapp.NewsListActivity"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
-        <fragment
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/news_item_toolbar"
+        android:layout_height="58dp"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:titleTextColor="#ffffff">
+    </android.support.v7.widget.Toolbar>
+
+
+    <fragment
             android:id="@+id/list_fragment"
             android:name="pavlosnicolaou.newsapp.NewsListFragment"
             android:layout_width="match_parent"

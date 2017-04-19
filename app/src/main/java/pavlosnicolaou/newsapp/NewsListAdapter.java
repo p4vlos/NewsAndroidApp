@@ -2,15 +2,22 @@ package pavlosnicolaou.newsapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.ShareActionProvider;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
-
 
 /**
  * Created by vl1s on 16/04/2017.
@@ -28,9 +35,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
         private TextView newsDetails;
         private NetworkImageView photo;
 
-        private Button aboutMeBtn;
-
-
         public ViewHolder(View itemView) {
             super(itemView);
 
@@ -38,8 +42,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
             newsName = (TextView) itemView.findViewById(R.id.news_name);
             newsDetails = (TextView) itemView.findViewById(R.id.news_details);
             photo = (NetworkImageView) itemView.findViewById(R.id.photo);
-
-            aboutMeBtn = (Button) itemView.findViewById(R.id.about_me);
 
             //Click Listener
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -50,16 +52,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
                     }
                 }
             });
-
-            //Click Listener
-            aboutMeBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-//                    Intent intent = new Intent(this, NewsArticleActivity.class);
-//                    startActivity(intent);
-                }
-            });
         }
+
 
         public void setData(News news) {
             //Set values

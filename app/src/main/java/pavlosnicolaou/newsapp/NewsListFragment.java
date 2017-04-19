@@ -63,6 +63,7 @@ public class NewsListFragment extends Fragment implements NewsModel.OnListUpdate
         //Attach to recycler view
         newsListView.setAdapter(adapter);
 
+        //Adding a line between each Cell
         DividerItemDecoration divider = new DividerItemDecoration(getActivity(), layoutManager.getOrientation());
         newsListView.addItemDecoration(divider);
 
