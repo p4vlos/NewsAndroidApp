@@ -1,7 +1,5 @@
 package pavlosnicolaou.newsapp;
 
-import android.util.Log;
-
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
@@ -25,6 +23,7 @@ public class NewsModel {
     }
 
     private ArrayList<News> newsList = new ArrayList<News>();
+
 
     private NewsModel() {
 
@@ -53,7 +52,7 @@ public class NewsModel {
                     newsList.add(news);
                 }
             } catch (JSONException e) {
-
+                //use the progress bar
             }
             notifyListener();
         }

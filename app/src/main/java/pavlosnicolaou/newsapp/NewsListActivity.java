@@ -25,7 +25,7 @@ public class NewsListActivity extends AppCompatActivity implements NewsListFragm
             hasTwoPanes = true;
         }
 
-        //initToolBar();
+        initToolBar();
     }
 
     @Override
@@ -45,16 +45,22 @@ public class NewsListActivity extends AppCompatActivity implements NewsListFragm
 
     public void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.news_item_toolbar);
-        toolbar.setTitle("News");
 
         setSupportActionBar(toolbar);
+        //add Title to toolbar
+        toolbar.setTitle("News");
 
-        toolbar.setNavigationIcon(R.drawable.profile_btn);
+        toolbar.setNavigationIcon(R.drawable.ic_person);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public  void onClick(View v) {
-                Toast.makeText(NewsListActivity.this, "clicking the toolbar!", Toast.LENGTH_SHORT).show();
+               goToAboutMe();
             }
         });
+    }
+
+    private void goToAboutMe() {
+        Intent intent = new Intent(this, AboutMeActivity.class);
+        startActivity(intent);
     }
 }
