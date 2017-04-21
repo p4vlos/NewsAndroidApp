@@ -10,6 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class NewsArticleActivity extends AppCompatActivity {
 
     Toolbar toolbar;
@@ -28,6 +31,17 @@ public class NewsArticleActivity extends AppCompatActivity {
         fragment.updateDetails(itemId);
 
         initToolBar();
+
+        initAdView();
+
+    }
+
+    public void initAdView() {
+
+        AdView adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
     }
 
     public void initToolBar() {

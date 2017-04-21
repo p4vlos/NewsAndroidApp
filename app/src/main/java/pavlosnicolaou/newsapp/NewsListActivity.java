@@ -9,13 +9,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.ProgressBar;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class NewsListActivity extends AppCompatActivity implements NewsListFragment.OnNewsItemClickedListener {
 
     private boolean hasTwoPanes;
 
     Toolbar toolbar;
+
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +33,12 @@ public class NewsListActivity extends AppCompatActivity implements NewsListFragm
             hasTwoPanes = true;
         }
 
+        //Setup Progress Bar
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
         initToolBar();
+
+        initAdView();
     }
 
     @Override
@@ -90,6 +100,13 @@ public class NewsListActivity extends AppCompatActivity implements NewsListFragm
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void initAdView() {
+        AdView adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
     }
 
 }

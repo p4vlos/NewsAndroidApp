@@ -13,6 +13,9 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class AboutMeActivity extends AppCompatActivity {
 
     private TextView followMeBtn;
@@ -33,6 +36,8 @@ public class AboutMeActivity extends AppCompatActivity {
 
         //Add Toolbar
         initToolBar();
+
+        initAdView();
     }
 
     public void initToolBar() {
@@ -99,6 +104,13 @@ public class AboutMeActivity extends AppCompatActivity {
         String email = "Email me: <a href=\"pn94@kent.ac.uk\">pn94@kent.ac.uk</a>";
         emailBtn.setText(Html.fromHtml(email));
         emailBtn.setMovementMethod(LinkMovementMethod.getInstance());
+
+    }
+
+    public void initAdView() {
+        AdView adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
     }
 
