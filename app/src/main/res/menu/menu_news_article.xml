@@ -8,10 +8,5 @@
         android:icon="@drawable/ic_favourite"
         app:showAsAction="always">
     </item>
-    <item
-        android:id="@+id/search_btn"
-        android:icon="@drawable/ic_search"
-        app:showAsAction="always"
-        android:title="Search">
-    </item>
+
 </menu>

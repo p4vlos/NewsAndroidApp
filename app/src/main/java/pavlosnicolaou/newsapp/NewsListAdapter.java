@@ -43,6 +43,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
             newsDetails = (TextView) itemView.findViewById(R.id.news_details);
             photo = (NetworkImageView) itemView.findViewById(R.id.photo);
 
+            photo.animate().alpha(1f).setDuration(3000);
+
             //Click Listener
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

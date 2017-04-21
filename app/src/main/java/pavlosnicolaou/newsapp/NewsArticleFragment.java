@@ -25,7 +25,7 @@ public class NewsArticleFragment extends Fragment {
     private FloatingActionButton shareBtn;
 
     //Progress Bar
-    private ProgressBar progressBar;
+//    private ProgressBar progressBar;
 
     public NewsArticleFragment() {
         // Required empty public constructor
@@ -37,7 +37,10 @@ public class NewsArticleFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_news_article, container, false);
 
+        //Set up photo with animation
         photo = (NetworkImageView) view.findViewById(R.id.imageView);
+        photo.animate().alpha(1f).setDuration(3000);
+
         newsName = (TextView) view.findViewById(R.id.newsName);
         newsDetails = (TextView) view.findViewById(R.id.newsDetails);
         newsArticle = (TextView) view.findViewById(R.id.newsArticle);
@@ -45,7 +48,7 @@ public class NewsArticleFragment extends Fragment {
         newsArticle.setMovementMethod(new ScrollingMovementMethod());
 
         shareBtn = (FloatingActionButton) view.findViewById(R.id.shareBtn);
-        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+//        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
 
         shareBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

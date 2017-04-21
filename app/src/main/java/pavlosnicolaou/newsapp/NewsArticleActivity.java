@@ -5,6 +5,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 public class NewsArticleActivity extends AppCompatActivity {
@@ -46,6 +49,27 @@ public class NewsArticleActivity extends AppCompatActivity {
     private void goToAboutMe() {
         Intent intent = new Intent(this, AboutMeActivity.class);
         startActivity(intent);
+    }
+
+    //Tool bar Buttons Setup
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //Inflate the menu
+        getMenuInflater().inflate(R.menu.menu_news_article, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //Handle action bar item clicks here
+
+        int id = item.getItemId();
+
+        if (id == R.id.favourite_btn) {
+            Log.i("Favourite Button Tapped", "Favourites");
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

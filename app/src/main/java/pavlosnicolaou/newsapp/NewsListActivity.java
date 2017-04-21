@@ -67,6 +67,8 @@ public class NewsListActivity extends AppCompatActivity implements NewsListFragm
         startActivity(intent);
     }
 
+
+    //Tool bar Buttons Setup
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Inflate the menu
@@ -83,8 +85,10 @@ public class NewsListActivity extends AppCompatActivity implements NewsListFragm
         if (id == R.id.search_btn) {
             Log.i("Search Button Tapped", "Search");
             return true;
+        } else if (id == R.id.favourite_btn) {
+            Log.i("Favourite Button Tapped", "Favourites");
+            return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
